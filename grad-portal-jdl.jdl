@@ -5,8 +5,6 @@ entity School {
 }
 
 entity Graduation {
-    schoolId Long required
-    gradId Long required
     startYear Integer
     graduationYear Integer required
     gpa Double
@@ -20,7 +18,6 @@ entity Grad {
 }
 
 entity JobHistory {
-	gradId Long required
     companyName String required
 	jobTitle String required
 	startDate Instant required
@@ -29,7 +26,6 @@ entity JobHistory {
 }
 
 entity Skill {
-	gradId Long required
 	name String required
     description String
     rate Double

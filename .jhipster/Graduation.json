@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20240727120810"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "startYear",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "graduationYear",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "gpa",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "Graduation",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "school",
+      "relationshipName": "schoolId",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "grad",
+      "relationshipName": "gradId",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

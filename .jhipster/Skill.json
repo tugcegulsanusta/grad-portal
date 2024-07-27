@@ -1,0 +1,37 @@
+{
+  "annotations": {
+    "changelogDate": "20240727120813"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "order",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Skill",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "grad",
+      "relationshipName": "gradId",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
