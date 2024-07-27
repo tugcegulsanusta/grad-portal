@@ -1,0 +1,52 @@
+entity School {
+	universityName String required
+    facultyName String required
+    departmentName String required
+}
+
+entity Graduation {
+    schoolId Long required
+    gradId Long required
+    startYear Integer
+    graduationYear Integer required
+    gpa Double
+}
+
+entity Grad {
+	firstName String
+	lastName String
+	email String
+	phoneNumber String 
+}
+
+entity JobHistory {
+	gradId Long required
+    companyName String required
+	jobTitle String required
+	startDate Instant required
+    endDate Instant
+    isCurrent Boolean required
+}
+
+entity Skill {
+	gradId Long required
+	name String required
+    description String
+    rate Double
+    order Integer
+}
+
+ 
+relationship ManyToOne {
+	Graduation{schoolId} to School
+    Graduation{gradId} to Grad
+    JobHistory{gradId} to Grad
+    Skill{gradId} to Grad
+}
+ 
+// Set pagination options 
+paginate Grad, Graduation, School, Skill, JobHistory  with pagination
+
+// Set service options to all except few
+service all with serviceImpl
+ 
