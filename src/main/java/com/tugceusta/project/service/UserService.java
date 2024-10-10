@@ -293,4 +293,8 @@ public class UserService {
     public List<String> getAuthorities() {
         return authorityRepository.findAll().stream().map(Authority::getName).toList();
     }
+
+    public Optional<User> getUserEntity(Long id) {
+        return userRepository.findById(id);
+    }
 }

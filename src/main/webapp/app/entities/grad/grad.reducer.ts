@@ -3,6 +3,7 @@ import { createAsyncThunk, isFulfilled, isPending } from '@reduxjs/toolkit';
 import { cleanEntity } from 'app/shared/util/entity-utils';
 import { IQueryParams, createEntitySlice, EntityState, serializeAxiosError } from 'app/shared/reducers/reducer.utils';
 import { IGrad, defaultValue } from 'app/shared/model/grad.model';
+import { IGradWithInfo } from 'app/shared/model/gradWithInfo.model';
 
 const initialState: EntityState<IGrad> = {
   loading: false,
@@ -35,6 +36,11 @@ export const getEntity = createAsyncThunk(
   },
   { serializeError: serializeAxiosError },
 );
+
+export const getProfileEntity = async (id: string | number) => {
+  const requestUrl = `api/profile/${id}`;
+  return axios.get<IGradWithInfo>(requestUrl);
+};
 
 export const createEntity = createAsyncThunk(
   'grad/create_entity',

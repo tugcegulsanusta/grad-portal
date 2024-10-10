@@ -210,4 +210,10 @@ public class UserResource {
             .headers(HeaderUtil.createAlert(applicationName, "A user is deleted with identifier " + login, login))
             .build();
     }
+
+    @GetMapping("/user/{Id}")
+    public ResponseEntity<Optional<User>> getUser(@PathVariable Long id) {
+        Optional<User> entity = userService.getUserEntity(id);
+        return ResponseEntity.ok().body(entity);
+    }
 }

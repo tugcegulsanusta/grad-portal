@@ -3,6 +3,7 @@ package com.tugceusta.project.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * A School.
@@ -114,5 +115,21 @@ public class School implements Serializable {
             ", facultyName='" + getFacultyName() + "'" +
             ", departmentName='" + getDepartmentName() + "'" +
             "}";
+    }
+
+    public String toSchoolFullName() {
+        StringBuilder stringBuilder = new StringBuilder();
+        if (StringUtils.isNotEmpty(this.getUniversityName())) {
+            stringBuilder.append(this.getUniversityName());
+        }
+        if (StringUtils.isNotEmpty(this.getFacultyName())) {
+            stringBuilder.append(" <br>");
+            stringBuilder.append(this.getFacultyName());
+        }
+        if (StringUtils.isNotEmpty(this.getDepartmentName())) {
+            stringBuilder.append(" <br>");
+            stringBuilder.append(this.getDepartmentName());
+        }
+        return stringBuilder.toString();
     }
 }

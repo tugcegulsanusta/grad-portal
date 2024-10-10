@@ -16,8 +16,8 @@ export const Home = () => {
         <span className="hipster rounded" />
       </Col>
       <Col md="9">
-        <h1 className="display-4">Merhaba, Java Hipster!</h1>
-        <p className="lead">Burası Ana Sayfanız</p>
+        <h1 className="display-4">Merhaba!</h1>
+        <p className="lead">Hacettepe Mezunlar Portalına Hoş Geldiniz</p>
         {account?.login ? (
           <div>
             <Alert color="success">&quot;{account.login}&quot; olarak giriş yaptınız.</Alert>
@@ -29,9 +29,8 @@ export const Home = () => {
               <Link to="/login" className="alert-link">
                 Giriş
               </Link>
-              yapmak istiyorsanız, varsayılan hesaplardan birini deneyebilirsiniz:
-              <br />- Yönetici (kullanıcı adı=&quot;admin&quot; ve şifre=&quot;admin&quot;) <br />- Kullanıcı (kullanıcı
-              adı=&quot;user&quot; and şifre=&quot;user&quot;).
+              yapmak istiyorsanız, varsayılan hesabı deneyebilirsiniz:
+              <br />- Kullanıcı (kullanıcı adı=&quot;user&quot; and şifre=&quot;user&quot;).
             </Alert>
 
             <Alert color="warning">
